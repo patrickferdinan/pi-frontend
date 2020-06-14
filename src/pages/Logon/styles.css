@@ -1,0 +1,16 @@
+body {
+    font: 400 14px Roboto, sans-serif;
+    background: #f0f0f5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.aling{
+    padding-top: 150px;
+}
+menu {
+    position: absolute;
+}
+menu form{
+    position: relative;
+    margin-left: 350px;
+}

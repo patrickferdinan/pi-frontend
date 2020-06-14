@@ -1,0 +1,10 @@
+.btn-pesquisa{
+    margin-bottom: 5px;
+    background: #7159c1;
+    height: 40px;
+    width: 90%;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 70;
+    margin: auto;
+}
