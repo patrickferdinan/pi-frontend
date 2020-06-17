@@ -15,7 +15,7 @@ import './styles.css';
 //https://github.com/axios/axios
 import axios from 'axios'
 
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/splash.png';
 import eventImg from '../../assets/event1.png';
 import LocalStorageService from '../../service/localStorageService';
 
@@ -68,18 +68,21 @@ class Logon extends React.Component {
     render() {
         return (
             <>
-            <div className="row">
-                    <div className="menu">
+            <div className="menu">
                     <img src={logoImg} alt="logon" />
                         <div className="col-md-12">
                             <form className="margin">
                                 <input type="text" value={this.state.name} onChange={e => this.setState({ name: e.target.value })} className="form-control" id="nameFilter" placeholder="Digite o nome do Evento" />
                                 <Link className="back-link" onClick={this.findAllEvents}>
+                                    <div className="link">
                                         <FiSearch size={16} color="#7159c1" />
-                                </Link>
+                                    </div>
+                            </Link>
                             </form>
                         </div>
                     </div>
+            <div className="row">
+                    
             </div>
                 <div className="container">
                     <div className="row">

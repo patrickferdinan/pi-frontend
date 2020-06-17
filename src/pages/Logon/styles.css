@@ -7,10 +7,21 @@ body {
 .aling{
     padding-top: 150px;
 }
-menu {
-    position: absolute;
-}
-menu form{
+.form-control {
+    width: 250px;
     position: relative;
-    margin-left: 350px;
+    margin-left: 1000px;
+    margin-top: -110px;
+}
+
+.link {
+    margin-left: 1225px;
+    margin-top: -120px;
+}
+.menu {
+    background: #7159c1;
+}
+
+.back-link {
+    margin-bottom: 50px;
 }
