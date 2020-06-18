@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiLogIn, FiSearch } from 'react-icons/fi';
+import { FiLogIn, FiSearch, FiLinkedin, FiGithub } from 'react-icons/fi';
 
 import 'bootswatch/dist/flatly/bootstrap.css'
 
@@ -114,8 +114,26 @@ class Logon extends React.Component {
                         order={this.orders} />
                     <br>
                     </br>
+                    <footer>
+                        <span className="dev">Patrick Ferdinan</span> 
+                        <a className="back-link" href="https://www.linkedin.com/in/patrick-ferdinan-73136815a/" target="_blank">
+                            <FiLinkedin size={20} color="#7159c1" />
+                        </a>
+                        <a className="back-link" href="https://github.com/patrickferdinan" target="_blank">
+                            <FiGithub size={20} color="#7159c1" />
+                        </a>
+                        <span className="dev">|&nbsp;&nbsp; Talisson Melo </span>
+                        <a className="back-link" href="" target="_blank" >
+                            <FiLinkedin size={20} color="#7159c1" />
+                        </a>
+                        <a className="back-link" href="https://github.com/TalissonMelo" target="_blank">
+                            <FiGithub size={20} color="#7159c1" />
+                        </a>
+                    </footer>
                 </div>
+                
             </>
+            
         );
     }
 }
