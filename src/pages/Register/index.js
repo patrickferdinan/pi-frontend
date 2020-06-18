@@ -102,7 +102,7 @@ class Register extends React.Component {
     render() {
 
         const userType = [
-            { label: 'SELECIONE...', value: null },
+            { label: 'Selecione...', value: null },
             { label: 'Pessoa Física', value: 0 },
             { label: 'Pessoa Jurídica', value: 1 }
         ]

@@ -126,3 +126,53 @@
     transition: background-color 1s;
     border-color: #7159c1;
 }
+
+.get-ticket h4 {
+    color: #999;
+    background: #7159c1;
+}
+
+.get-ticket header {
+    color: #7159c1;
+}
+
+.card {
+    padding: 5px;
+}
+
+.card input {
+    width: 630px;
+    height: 50px;
+    color: #333;
+    border: 1px solid #7159c1;
+    border-radius: 8px;
+    padding: 0 15px;
+    margin-left: 5px;
+    transition: filter 0.2s;
+}
+.card:hover {
+    border: 1px solid #7159c1;
+    
+}
+
+.card button:hover {
+    color: #fff;
+    text-decoration: none;
+    filter: brightness(90%)
+}
+
+.title {
+    color: #fff;
+}
+
+.btn-controll button:hover {
+    color: #fff;
+    text-decoration: none;
+    filter: brightness(90%);
+    border: #7159c1;
+}
+
+.price  span{
+    color: #7159c1;
+    font-size: larger;
+}

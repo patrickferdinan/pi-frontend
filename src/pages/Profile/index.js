@@ -107,9 +107,9 @@ class Profile extends React.Component {
     render() {
 
         const confirmDialog = (
-            <div>
-                <Button label="Confirmar" className="btn-pesquisa" icon="pi pi-check" onClick={this.orders} />
-                <Button label="Cancelar" icon="pi pi-times" onClick={this.cancelOrders} className="p-button-secondary" />
+            <div className="btn-controll">
+                <Button type="button" label="Confirmar" className="btn btn-success" icon="pi pi-check" onClick={this.orders} />
+                <Button type="button" label="Cancelar" className="btn btn-danger" icon="pi pi-times" onClick={this.cancelOrders}  style={ {background: ''} } />
             </div>
         )
 
@@ -156,18 +156,20 @@ class Profile extends React.Component {
                     <br>
                     </br>
                 </div >
-                <div>
-                    <Dialog header="Adquirir Ingresso em Evento"
+                <div className="get-ticket">
+                    <Dialog className="title aling-center" header="Adquirir Ingresso em Evento"
                         visible={this.state.showConfirmDialog}
                         style={{ width: '50vw' }}
                         footer={confirmDialog}
                         modal={true} onHide={() => this.setState({ showConfirmDialog: false })}>
-                        <h4 className="card-title aling-center">{this.state.tickets.name}</h4>
-                        <p><strong>Data Inicial : </strong> {this.state.tickets.initialData} <strong> Data Final : </strong> {this.state.tickets.finalData}</p>
-                        <h5><strong> Preço : </strong> R$: {this.state.tickets.price},00 </h5>
-                        <input id="amout" value={this.state.amout} onChange={e => this.setState({ amout: e.target.value })} placeholder="Quantidade" />
-                        <h5 className="card-title aling-center" >Atenção</h5>
-                        <p>Após clicar em confirmar e ocorrer tudo certo com a compra do ingresso. Será enviado um email para você com os dados do evento e quem você deve contatar para confirmar a compra.</p>
+                        <div className="card">
+                            <h4 className="card-title aling-center">{this.state.tickets.name}</h4>
+                            <p><strong>Data Inicial : </strong> {this.state.tickets.initialData} <strong> Data Final : </strong> {this.state.tickets.finalData}</p>
+                            <div className="price"><strong> Preço : </strong><span> R$: {this.state.tickets.price},00 </span></div>
+                            <input id="amout" value={this.state.amout} onChange={e => this.setState({ amout: e.target.value })} placeholder="Quantidade" />
+                            <h5 className="card-title aling-center" >Atenção</h5>
+                            <p>Após clicar em confirmar e ocorrer tudo certo com a compra do ingresso. Será enviado um email para você com os dados do evento e quem você deve contatar para confirmar a compra.</p>
+                            </div>
                     </Dialog>
                 </div>
 

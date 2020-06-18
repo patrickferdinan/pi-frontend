@@ -53,10 +53,11 @@ class Payment extends React.Component {
                         <div className="col-md-12">
                             <div className="profile-container">
                                 <div className="card border-light aling-center">
-                                    <div className="card-header">Será enviado um email de confirmação para o pedido informado, confirmando o pagamento do ingresso.</div>
+                                    <div className="card-header"><p>Será enviado um email de confirmação para o pedido informado, confirmando o pagamento do ingresso.</p></div>
                                     <div className="card-body">
-                                        <h4 className="card-title form-control button">Pagamento De Ingresso</h4>
-                                        <input id="payment" className="form-control button" value={this.state.payment} onChange={e => this.setState({ payment: e.target.value })} placeholder="Digite o Número do Ingresso..." />
+                                        <h4 className="card-title">Pagamento de Ingresso</h4>
+                                         Digite o Número do Ingresso: 
+                                        <input id="payment" className="ticket" value={this.state.payment} onChange={e => this.setState({ payment: e.target.value })} /><br/><br/>
                                         <button onClick={this.ticket} type="button" className="btn btn-success">Confirmar Pagamento</button>
                                         <button onClick={e => this.props.history.push('/profile')} type="button" className="btn btn-danger">Voltar Home</button>
                                     </div>
