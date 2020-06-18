@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiPower } from 'react-icons/fi';
+import { FiPower, FiSearch, FiUser, FiPlus } from 'react-icons/fi';
 
 import './styles.css';
 import axios from 'axios'
 
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/splash.png';
 import localStorageService from '../../service/localStorageService';
 import EventList from '../../components/eventList';
 import AuthService from '../../service/authService'
@@ -24,7 +24,7 @@ class Profile extends React.Component {
 
     user() {
         const emailUser = localStorageService.getlocalStorage('_user')
-        return emailUser.email;
+        return emailUser.name;
     }
 
     constructor() {
@@ -92,7 +92,7 @@ class Profile extends React.Component {
             axios.get(`http://localhost:8080/users/${userId}`).then(response => {
                 localStorageService.addItem('_user', response.data);
             })
-            
+
             this.props.history.push('/profile')
             messageSuccess("Ingresso Adquirido..")
         }).catch(erro => {
@@ -115,44 +115,40 @@ class Profile extends React.Component {
 
         return (
             <>
+            <div className="menu">
+                <img src={logoImg} alt="logon" />
+                    <div className="col-md-12">
+                        <form className="margin">
+                            <input type="text" value={this.state.name} onChange={e => this.setState({ name: e.target.value })} className="form-control" id="nameFilter" placeholder="Digite o nome do Evento" />
+                            <Link className="back-link" onClick={this.findAllEvents}>
+                                <div className="link">
+                                    <FiSearch size={16} color="#7159c1" />
+                                </div>
+                            </Link>
+                            <Link className="teste" to="/" onClick={logout}>
+                                    <FiPower size={20} color="#fff" />
+                            </Link>
+                        </form>
+                    </div>
+                </div>
+                <div className="body">
+                    <ul>
+                        <li><Link className="back-link" to="/perfil" >
+                            <FiUser size={30} color="#7159c1" />Perfil
+                        </Link></li>
+                        <li><Link className="back-link" to="/event/new" >
+                            <FiPlus size={30} color="#7159c1" />Novo evento
+                        </Link></li>
+                    </ul>
+                </div>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">
                             <div className="profile-container">
-                                <header>
-                                    <img src={logoImg} alt="Event" />
-                                    <span>Bem vindo... {this.user()} </span>
+                                <header className="intro">
+                                <span className="bem-vindo">Bem vindo...</span> <span className="nome" >{this.user()}</span>
                                 </header>
                             </div>
-                        </div>
-                        <div className="col-md-2">
-                            <header>
-                                <Link className="button space" to="/perfil">Perfil</Link>
-                            </header>
-                        </div>
-                        <div className="col-md-3">
-                            <header>
-                                <Link className="button space" to="/event/new">Registrar novo evento</Link>
-                            </header>
-                        </div>
-                        <div className="col-md-1">
-                            <div className="profile-container">
-                                <header>
-                                    <button type="button">
-                                        <Link className="" to="/" onClick={logout}>
-                                            <FiPower size={18} color="#7159c1" />
-                                        </Link>
-                                    </button>
-                                </header>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-12">
-                            <form className="margin">
-                                <input type="text" value={this.state.name} onChange={e => this.setState({ name: e.target.value })} className="form-control" id="nameFilter" placeholder="Digite o nome do Evento" />
-                                <button type="button" className="button" onClick={this.findAllEvents}>Pesquisar</button>
-                            </form>
                         </div>
                     </div>
                     <EventList eventos={this.state.events}
@@ -180,4 +176,4 @@ class Profile extends React.Component {
     }
 }
 
-export default Profile
+export default Profile 

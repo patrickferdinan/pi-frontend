@@ -4,7 +4,7 @@
     height: 40px;
     width: 100%;
     border-radius: 8px;
-    color: #fff;
+    color: #333;
     font-weight: 70;
 }
 
@@ -65,4 +65,64 @@
     right: 20px;
     top: 24px;
     border: 1px solid #999;
+}
+
+.teste {
+    position: absolute;
+    margin-top: -115px;
+    margin-left: 1270px;
+}
+
+.bem-vindo {
+    font-size: larger;
+}
+
+.nome {
+    font-size: 90px;
+    color: #7159c1;
+}
+.intro {
+    margin-top: -170px;
+}
+
+.body {
+    margin-left: 980px;
+}
+
+.body ul {
+    list-style: none;
+    
+}
+.body li{
+    display: inline-block;
+    margin-top:-72px ; 
+    transition: background-color 1s;
+    margin-left: 30px;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    color: #7159c1;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.back {
+    margin-right: 8px;
+}
+
+.back {
+    opacity: 0.8;
+}
+
+.back:hover {
+    color: #7159c1;
+    text-decoration: none;
+    filter: brightness(90%);
+    transition: background-color 1s;
+    border-color: #7159c1;
 }

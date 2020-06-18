@@ -4,6 +4,13 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+button:hover {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+
 .aling{
     padding-top: 150px;
 }
@@ -24,4 +31,8 @@ body {
 
 .back-link {
     margin-bottom: 50px;
+}
+
+.form-aling {
+    margin-top: 120px;
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiPower } from 'react-icons/fi';
+import { FiPower, FiArrowLeft } from 'react-icons/fi';
 
 import './styles.css';
 import axios from 'axios'
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/splash.png';
 
 import localStorageService from '../../service/localStorageService';
 import EventProfile from '../../components/eventProfile';
@@ -75,23 +75,19 @@ class Perfil extends React.Component {
 
         return (
             <>
+            <header className="menu">
+                <img src={logoImg} alt="Event" />
+                <span className="user"> Usuário , {this.user.name} </span>
+                <ul>
+                    <li><Link className="back" to="/profile">
+                        <FiArrowLeft size={20} color="#fff" />Home
+                    </Link></li>
+                    <li><Link className="back-link"  to="/" onClick={logout}>
+                        <FiPower size={20} color="#fff" />
+                    </Link></li>
+                </ul>  
+            </header>
                 <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className="profile-container">
-                                <header>
-                                    <img src={logoImg} alt="Event" />
-                                    <span> Usuário , {this.user.name} </span>
-                                    <Link className="button" to="/profile">Home</Link>
-                                    <button type="button">
-                                        <Link className="" to="/" onClick={logout}>
-                                            <FiPower size={18} color="#7159c1" />
-                                        </Link>
-                                    </button>
-                                </header>
-                            </div>
-                        </div>
-                    </div>
                     <div className="row">
                         <div className="col-md-12">
 
