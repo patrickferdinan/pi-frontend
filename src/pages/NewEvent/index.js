@@ -189,8 +189,8 @@ class NewEvent extends React.Component {
                                     <p>{this.state.updateEvent ? 'Atualizar evento na plataforma.' : 'Crie o seu evento na plataforma.'}</p>
                                     <Link className="back-link" to="/profile">
                                         <FiArrowLeft size={16} color="#7159c1" />
-                                    Voltar para home
-                                </Link>
+                                        Voltar para home
+                                    </Link>
                                 </section>
                             </div>
                         </div>
@@ -225,12 +225,15 @@ class NewEvent extends React.Component {
                             <input type="text" name="cep" value={this.state.cep}
                                 onChange={this.handleChange} placeholder="Cep **" />
 
-                            <SelectMenu className="form-control button" lista={cidadeId} name="cidadeId"
-                                value={this.state.cidadeId} onChange={this.handleChange} />
+                            <div className="select-group">
+                            <div className="group">
+                                <SelectMenu className="form-control button" lista={cidadeId} name="cidadeId"
+                                    value={this.state.cidadeId} onChange={this.handleChange} />
 
-                            <SelectMenu className="form-control button" lista={type} name="type"
-                                value={this.state.type} onChange={this.handleChange} />
-
+                                <SelectMenu className="form-control button" lista={type} name="type"
+                                    value={this.state.type} onChange={this.handleChange} />
+                            </div>
+                            </div>
                             <input name="price" value={this.state.price}
                                 onChange={this.handleChange} placeholder="Preço" />
 
