@@ -7,7 +7,21 @@
     text-align: center;
 }
 
-.center{
-    padding-right: 140px;
+.container .link {
+    margin-left: -100px;
+}
+
+.link {
+    color: #7159c1;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.link:hover {
+    color: #333;
+    text-decoration: none;
+    filter: brightness(90%);
 }
     

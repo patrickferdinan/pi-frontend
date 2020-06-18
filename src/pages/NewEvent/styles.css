@@ -3,15 +3,19 @@
     max-width: 1120px;
     height: 100vh;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 90px;
 }
 
 .margin{
     margin-top: 27px;
     margin-bottom: 20px;
+}
+
+.margin h4 {
+    color: blueviolet;
 }
 
 .new-event-container .content {
@@ -51,13 +55,42 @@
     margin-top: -35px;
 }
 
-.select-group {
-    margin-top: 5px;
-    margin-left: -1000px;
-    width: 250px;
-    
+.content form .select-group {
+    display: flex;
 }
 
-.group {
-    
+.select-group select {
+    height: 48px;
+}
+
+.select-group select + select {
+    margin-left: 8px;
+}
+
+.select-group select + input {
+    margin-left: 8px;
+}
+
+.content form .input-group {
+    display: flex;
+}
+
+.input-group input + input {
+    margin-left: 8px;
+}
+
+.content form .input-text {
+    display: flex;
+}
+
+.input-text input + input {
+    margin-left: 8px;
+}
+
+.content form .input-data {
+    display: flex;
+}
+
+.input-data input + input {
+    margin-left: 8px;
 }

@@ -188,8 +188,8 @@ class NewEvent extends React.Component {
                                     <h1>{this.state.updateEvent ? 'Atualizar Evento' : 'Cadastrar Evento'}</h1>
                                     <p>{this.state.updateEvent ? 'Atualizar evento na plataforma.' : 'Crie o seu evento na plataforma.'}</p>
                                     <Link className="back-link" to="/profile">
-                                        <FiArrowLeft size={16} color="#7159c1" />
-                                        Voltar para home
+                                        <FiArrowLeft size={16} color="#333" />
+                                        Voltar
                                     </Link>
                                 </section>
                             </div>
@@ -204,38 +204,45 @@ class NewEvent extends React.Component {
                             <textarea type="text" name="description" value={this.state.description}
                                 onChange={this.handleChange} placeholder="Descrição" />
 
-                            <input type="text" name="initialData" value={this.state.initialData}
-                                onChange={this.handleChange} placeholder="00/00/0000 00:00:00 Data Iniciail do Evento **" />
+                            <div className="input-data">
+                                <input type="text" name="initialData" value={this.state.initialData}
+                                    onChange={this.handleChange} placeholder="00/00/0000 00:00:00 Data Inicial" style={ { width: 265 } } />
 
-                            <input type="text" name="finalData" value={this.state.finalData}
-                                onChange={this.handleChange} placeholder="00/00/0000 00:00:00 Data Final do Evento **" />
+                                <input type="text" name="finalData" value={this.state.finalData}
+                                    onChange={this.handleChange} placeholder="00/00/0000 00:00:00 Data Final" style={ { width: 265 } } />
+                            </div>
 
-                            <input type="text" name="neighborhooh" value={this.state.neighborhooh}
-                                onChange={this.handleChange} placeholder="Bairro **" />
+                            <div className="input-group">
+                                <input type="text" name="street" value={this.state.street}
+                                    onChange={this.handleChange} placeholder="Rua **" style={ { width: 400 } } />
 
-                            <input type="text" name="complement" value={this.state.complement}
-                                onChange={this.handleChange} placeholder="Complemento" />
+                                <input type="text" name="number" value={this.state.number}
+                                    onChange={this.handleChange} placeholder="Numero **" style={ { width: 130 } } />
+                            </div>
 
-                            <input type="text" name="street" value={this.state.street}
-                                onChange={this.handleChange} placeholder="Rua **" />
+                            <div className="input-text">
+                                <input type="text" name="neighborhooh" value={this.state.neighborhooh}
+                                    onChange={this.handleChange} placeholder="Bairro **" style={ { width: 300 } } />
 
-                            <input type="text" name="number" value={this.state.number}
-                                onChange={this.handleChange} placeholder="Numero **" />
+                                <input type="text" name="complement" value={this.state.complement}
+                                    onChange={this.handleChange} placeholder="Complemento" style={ { width: 230 } } />
+                            </div>
 
                             <input type="text" name="cep" value={this.state.cep}
-                                onChange={this.handleChange} placeholder="Cep **" />
+                                onChange={this.handleChange} placeholder="Cep 00.000-000" />
 
                             <div className="select-group">
-                            <div className="group">
-                                <SelectMenu className="form-control button" lista={cidadeId} name="cidadeId"
-                                    value={this.state.cidadeId} onChange={this.handleChange} />
+                                <div className="group">
+                                    <SelectMenu className="button" lista={cidadeId} name="cidadeId"
+                                        value={this.state.cidadeId} onChange={this.handleChange} style={ { width: 200 } } />
 
-                                <SelectMenu className="form-control button" lista={type} name="type"
-                                    value={this.state.type} onChange={this.handleChange} />
+                                    <SelectMenu className="button" lista={type} name="type"
+                                        value={this.state.type} onChange={this.handleChange} style={ { width: 200 } } />
+                                    
+                                    <input name="price" value={this.state.price}
+                                        onChange={this.handleChange} placeholder="Preço" style={ { width: 120 } } />
+                                </div>
                             </div>
-                            </div>
-                            <input name="price" value={this.state.price}
-                                onChange={this.handleChange} placeholder="Preço" />
 
                             <textarea name="participants" value={this.state.participants}
                                 onChange={this.handleChange} placeholder="Participantes, CPF separados por espaço." />
