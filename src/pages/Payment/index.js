@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiPower } from 'react-icons/fi';
+import { FiPower, FiSearch } from 'react-icons/fi';
+import AuthService from '../../service/authService'
 
 import { messageError, messageSuccess } from '../../components/toastr';
 
 import axios from 'axios'
 import './styles.css';
+import logoImg from '../../assets/splash.png';
 
+const logout = () => {
+    AuthService.removeUserAuthenticate();
+}
 class Payment extends React.Component {
 
     state = {
@@ -48,6 +53,23 @@ class Payment extends React.Component {
     render() {
         return (
             <>
+                <div className="menu">
+                    <img src={logoImg} alt="logon" />
+                    <div className="col-md-12">
+                        <form className="margin">
+                            <input type="text" value={this.state.name} onChange={e => this.setState({ name: e.target.value })} className="form-control" id="nameFilter" placeholder="Digite o nome do Evento" />
+                            <Link className="back-link" onClick={this.findAllEvents}>
+                                <div className="link">
+                                    <FiSearch size={16} color="#7159c1" />
+                                </div>
+                            </Link>
+                            <Link className="teste" to="/" onClick={logout}>
+                                <FiPower size={20} color="#fff" />
+                            </Link>
+                        </form>
+                    </div>
+                </div>
+            <div className="row">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -65,6 +87,7 @@ class Payment extends React.Component {
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
 
             </>

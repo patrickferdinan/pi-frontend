@@ -8,7 +8,7 @@ import axios from 'axios'
 import logoImg from '../../assets/splash.png';
 import localStorageService from '../../service/localStorageService';
 import EventList from '../../components/eventList';
-import AuthService from '../../service/authService'
+import AuthService from '../../service/authService';
 import EventService from '../../service/eventService';
 
 import { Dialog } from 'primereact/dialog';
@@ -157,7 +157,7 @@ class Profile extends React.Component {
                     </br>
                 </div >
                 <div className="get-ticket">
-                    <Dialog className="title aling-center" header="Adquirir Ingresso em Evento"
+                    <Dialog className="title aling-center" header="Adquirir Ingresso em Evento" 
                         visible={this.state.showConfirmDialog}
                         style={{ width: '50vw' }}
                         footer={confirmDialog}
@@ -169,7 +169,7 @@ class Profile extends React.Component {
                             <input id="amout" value={this.state.amout} onChange={e => this.setState({ amout: e.target.value })} placeholder="Quantidade" />
                             <h5 className="card-title aling-center" >Atenção</h5>
                             <p>Após clicar em confirmar e ocorrer tudo certo com a compra do ingresso. Será enviado um email para você com os dados do evento e quem você deve contatar para confirmar a compra.</p>
-                            </div>
+                        </div>
                     </Dialog>
                 </div>
 
