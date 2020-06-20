@@ -35,7 +35,7 @@ class Perfil extends React.Component {
     }
 
     openDialog = (id) => {
-        this.setState({ showConfirmDialog: true , eventDelete: id})
+        this.setState({ showConfirmDialog: true, eventDelete: id })
     }
 
     edit = (id) => {
@@ -75,53 +75,60 @@ class Perfil extends React.Component {
 
         return (
             <>
-            <header className="menu">
-                <img src={logoImg} alt="Event" />
-                <span className="user"> Usuário , {this.user.name} </span>
-                <ul>
-                    <li><Link className="back" to="/profile">
-                        <FiArrowLeft size={20} color="#fff" />Home
-                    </Link></li>
-                    <li><Link className="back-link"  to="/" onClick={logout}>
-                        <FiPower size={20} color="#fff" />
-                    </Link></li>
-                </ul>  
-            </header>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
-
-                            <table className="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Nome</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Telefone</th>
-                                        <th scope="col">Ações</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr className="table-active">
-                                        <th scope="row">{this.user.name}</th>
-                                        <td>{this.user.email}</td>
-                                        <td>{this.user.phone}</td>
-                                        <td>
-                                            <button type="button" className="btn btn-warning">Editar</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <div className="container-fluid">
+                    <div className="menu">
+                        <div className="row">
+                            <div className="col-md-8">
+                                <img src={logoImg} alt="Event" />
+                                <span className="user"> Usuário , {this.user.name} </span>
+                            </div>
+                            <div className="col-md-2">
+                                <Link className="back" to="/profile">
+                                    <FiArrowLeft size={20} color="#fff" />Home
+                            </Link>
+                            </div>
+                            <div className="col-md-2">
+                                <Link className="back-link" to="/" onClick={logout}>
+                                    <FiPower size={20} color="#fff" />
+                                </Link>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <OrderList orders={this.orders.orders} />
-                    </div>
-                    <div>
-                        <EventProfile eventos={this.events.events}
-                            updateEvent={this.edit}
-                            deleteEvent={this.openDialog} />
-                        <br>
-                        </br>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-12">
+                                <table className="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Nome</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Telefone</th>
+                                            <th scope="col">Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr className="table-active">
+                                            <th scope="row">{this.user.name}</th>
+                                            <td>{this.user.email}</td>
+                                            <td>{this.user.phone}</td>
+                                            <td>
+                                                <button type="button" className="btn btn-warning">Editar</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div>
+                            <OrderList orders={this.orders.orders} />
+                        </div>
+                        <div>
+                            <EventProfile eventos={this.events.events}
+                                updateEvent={this.edit}
+                                deleteEvent={this.openDialog} />
+                            <br>
+                            </br>
+                        </div>
                     </div>
                 </div>
                 <div>

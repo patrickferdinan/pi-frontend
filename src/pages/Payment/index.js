@@ -1,18 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiPower, FiSearch } from 'react-icons/fi';
-import AuthService from '../../service/authService'
+import { FiPower, FiArrowLeft } from 'react-icons/fi';
+
 
 import { messageError, messageSuccess } from '../../components/toastr';
+import logoImg from '../../assets/splash.png';
 
 import axios from 'axios'
 import './styles.css';
-import logoImg from '../../assets/splash.png';
+import LocalStorageService from '../../service/localStorageService';
 
-const logout = () => {
-    AuthService.removeUserAuthenticate();
-}
 class Payment extends React.Component {
+
+
+    constructor() {
+        super();
+        this.user = LocalStorageService.getlocalStorage('_user');
+    }
 
     state = {
         payment: '',
@@ -28,7 +32,7 @@ class Payment extends React.Component {
 
         return msgs;
     }
-    
+
     ticket = () => {
 
         const msgs = this.validar();
@@ -46,31 +50,27 @@ class Payment extends React.Component {
             this.props.history.push('/profile')
             messageSuccess("Pamento Confirmado!..")
         }).catch(erro => {
-           messageError('Pagamento não encontrado')
+            messageError('Pagamento não encontrado')
         })
     }
 
     render() {
         return (
             <>
-                <div className="menu">
-                    <img src={logoImg} alt="logon" />
-                    <div className="col-md-12">
-                        <form className="margin">
-                            <input type="text" value={this.state.name} onChange={e => this.setState({ name: e.target.value })} className="form-control" id="nameFilter" placeholder="Digite o nome do Evento" />
-                            <Link className="back-link" onClick={this.findAllEvents}>
-                                <div className="link">
-                                    <FiSearch size={16} color="#7159c1" />
-                                </div>
-                            </Link>
-                            <Link className="teste" to="/" onClick={logout}>
-                                <FiPower size={20} color="#fff" />
-                            </Link>
-                        </form>
+                <div className="container-fluid">
+                    <div className="menu">
+                        <div className="row">
+                            <div className="col-md-10">
+                                <img src={logoImg} alt="Event" />
+                                <span className="user"> Usuário , {this.user.name} </span>
+                            </div>
+                            <div className="col-md-2">
+                                <Link className="back" to="/profile">
+                                    <FiArrowLeft size={20} color="#fff" />Home
+                                    </Link>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            <div className="row">
-                <div className="container">
                     <div className="row">
                         <div className="col-md-12">
                             <div className="profile-container">
@@ -78,8 +78,8 @@ class Payment extends React.Component {
                                     <div className="card-header"><p>Será enviado um email de confirmação para o pedido informado, confirmando o pagamento do ingresso.</p></div>
                                     <div className="card-body">
                                         <h4 className="card-title">Pagamento de Ingresso</h4>
-                                         Digite o Número do Ingresso: 
-                                        <input id="payment" className="ticket" value={this.state.payment} onChange={e => this.setState({ payment: e.target.value })} /><br/><br/>
+                                         Digite o Número do Ingresso:
+                                        <input id="payment" className="ticket" value={this.state.payment} onChange={e => this.setState({ payment: e.target.value })} /><br /><br />
                                         <button onClick={this.ticket} type="button" className="btn btn-success">Confirmar Pagamento</button>
                                         <button onClick={e => this.props.history.push('/profile')} type="button" className="btn btn-danger">Voltar Home</button>
                                     </div>
@@ -87,7 +87,6 @@ class Payment extends React.Component {
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
 
             </>

@@ -115,8 +115,8 @@ class Register extends React.Component {
                             <section>
                                 <img src={logoImg} alt="event" />
 
-                                <h1>Crie a sua Conta</h1>
-                                <p>Registre-se e entre na sua plataforma de eventos.</p>
+                                <h2>Crie a sua Conta</h2>
+                                <p>Registre-se e entre na plataforma eventos.</p>
 
                                 <Link className="link" to="/">
                                     <FiArrowLeft size={16} color="#333" className="center" />
