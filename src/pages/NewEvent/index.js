@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi'
-
 import { messageError, messageSuccess } from '../../components/toastr'
 
 import axios from 'axios'
 import localStorageService from '../../service/localStorageService';
-
 import './styles.css';
 import logoImg from '../../assets/logo.png';
 import SelectMenu from '../../components/selectMenu';
@@ -109,6 +107,10 @@ class NewEvent extends React.Component {
             msgs.push('Escolha uma cidade..')
         }
 
+        if (!this.state.price) {
+            msgs.push('Defina um Preço.')
+        }
+
         return msgs;
     }
 
@@ -167,8 +169,7 @@ class NewEvent extends React.Component {
         const cidadeId = [
             { label: 'Cidade...', value: null },
             { label: 'Araguari', value: 1 },
-            { label: 'Uberlândia', value: 2 },
-            { label: 'São Paulo	', value: 3 }
+            { label: 'Itumbiara', value: 2 }
         ]
 
         const type = [
@@ -206,26 +207,26 @@ class NewEvent extends React.Component {
 
                             <div className="input-data">
                                 <input type="text" name="initialData" value={this.state.initialData}
-                                    onChange={this.handleChange} placeholder="00/00/0000 00:00:00 Data Inicial" style={ { width: 265 } } />
+                                    onChange={this.handleChange} placeholder="00/00/0000 00:00:00 Data Inicial" style={{ width: 265 }} />
 
                                 <input type="text" name="finalData" value={this.state.finalData}
-                                    onChange={this.handleChange} placeholder="00/00/0000 00:00:00 Data Final" style={ { width: 265 } } />
+                                    onChange={this.handleChange} placeholder="00/00/0000 00:00:00 Data Final" style={{ width: 265 }} />
                             </div>
 
                             <div className="input-group">
                                 <input type="text" name="street" value={this.state.street}
-                                    onChange={this.handleChange} placeholder="Rua **" style={ { width: 400 } } />
+                                    onChange={this.handleChange} placeholder="Rua **" style={{ width: 400 }} />
 
                                 <input type="text" name="number" value={this.state.number}
-                                    onChange={this.handleChange} placeholder="Numero **" style={ { width: 130 } } />
+                                    onChange={this.handleChange} placeholder="Numero **" style={{ width: 130 }} />
                             </div>
 
                             <div className="input-text">
                                 <input type="text" name="neighborhooh" value={this.state.neighborhooh}
-                                    onChange={this.handleChange} placeholder="Bairro **" style={ { width: 300 } } />
+                                    onChange={this.handleChange} placeholder="Bairro **" style={{ width: 300 }} />
 
                                 <input type="text" name="complement" value={this.state.complement}
-                                    onChange={this.handleChange} placeholder="Complemento" style={ { width: 230 } } />
+                                    onChange={this.handleChange} placeholder="Complemento" style={{ width: 230 }} />
                             </div>
 
                             <input type="text" name="cep" value={this.state.cep}
@@ -234,13 +235,13 @@ class NewEvent extends React.Component {
                             <div className="select-group">
                                 <div className="group">
                                     <SelectMenu className="button" lista={cidadeId} name="cidadeId"
-                                        value={this.state.cidadeId} onChange={this.handleChange} style={ { width: 200 } } />
+                                        value={this.state.cidadeId} onChange={this.handleChange} style={{ width: 200 }} />
 
                                     <SelectMenu className="button" lista={type} name="type"
-                                        value={this.state.type} onChange={this.handleChange} style={ { width: 200 } } />
-                                    
+                                        value={this.state.type} onChange={this.handleChange} style={{ width: 200 }} />
+
                                     <input name="price" value={this.state.price}
-                                        onChange={this.handleChange} placeholder="Preço" style={ { width: 120 } } />
+                                        onChange={this.handleChange} placeholder="Preço* 00.00" style={{ width: 120 }} />
                                 </div>
                             </div>
 

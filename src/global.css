@@ -101,7 +101,14 @@ form textarea {
 }
 
 .back-link:hover {
-    color: #333;
+    color: #7057c3;
+    text-decoration: none;
+    filter: brightness(90%);
+}
+a {
+    opacity: 0.8;
+}
+a:hover {
     text-decoration: none;
     filter: brightness(90%);
 }

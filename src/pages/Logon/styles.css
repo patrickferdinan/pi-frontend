@@ -12,8 +12,9 @@ button:hover {
 
 
 .aling{
-    padding-top: 150px;
+    padding-top: 100px;
 }
+
 .form-control {
     width: 250px;
     position: relative;
@@ -34,13 +35,12 @@ button:hover {
 }
 
 .form-aling {
-    margin-top: 120px;
+    margin-top: 10px;
 }
 
 footer {
     text-align: center;
     display: flex;
-    margin-left: 400px;
     position: absolute;
 }
 
@@ -67,7 +67,6 @@ footer span {
     color: #7159c1;
     font-size: larger;
     transition: color 0.2s;
-    margin-left: 5px;
     margin-top: 40px;
 }
 

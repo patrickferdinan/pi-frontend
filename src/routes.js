@@ -34,7 +34,7 @@ export default function Routes() {
                 <RouteAuthenticate path="/profile" component={Profile} />
                 <RouteAuthenticate path="/event/new/:id?" component={NewEvent} />
                 <RouteAuthenticate path="/perfil" component={Perfil} />
-                <RouteAuthenticate path="/payment" component={Payment} />
+                <RouteAuthenticate path="/payment/:id?" component={Payment} />
             </Switch>
         </BrowserRouter>
     );

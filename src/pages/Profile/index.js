@@ -14,7 +14,7 @@ import EventService from '../../service/eventService';
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 
-import { messageError, messageSuccess } from '../../components/toastr';
+import { messageError, messageSuccess, messageWarning } from '../../components/toastr';
 
 const logout = () => {
     AuthService.removeUserAuthenticate();
@@ -92,11 +92,14 @@ class Profile extends React.Component {
             axios.get(`http://localhost:8080/users/${userId}`).then(response => {
                 localStorageService.addItem('_user', response.data);
             })
-
+            
             this.props.history.push('/profile')
             messageSuccess("Ingresso Adquirido..")
+            this.setState({ showConfirmDialog: false });
+
         }).catch(erro => {
-            console.log(erro.response)
+            messageWarning(erro.response.data.message)
+            this.setState({ showConfirmDialog: false })
         })
     }
 
@@ -165,7 +168,7 @@ class Profile extends React.Component {
                         <div className="card">
                             <h4 className="card-title aling-center">{this.state.tickets.name}</h4>
                             <p><strong>Data Inicial : </strong> {this.state.tickets.initialData} <strong> Data Final : </strong> {this.state.tickets.finalData}</p>
-                            <div className="price"><strong> Preço : </strong><span> R$: {this.state.tickets.price},00 </span></div>
+                            <div className="price"><strong> R$ : </strong><span> {this.state.tickets.price} </span></div>
                             <input id="amout" value={this.state.amout} onChange={e => this.setState({ amout: e.target.value })} placeholder="Quantidade" />
                             <h5 className="card-title aling-center" >Atenção</h5>
                             <p>Após clicar em confirmar e ocorrer tudo certo com a compra do ingresso. Será enviado um email para você com os dados do evento e quem você deve contatar para confirmar a compra.</p>

@@ -5,14 +5,11 @@ import { FiPower, FiArrowLeft } from 'react-icons/fi';
 import './styles.css';
 import axios from 'axios'
 import logoImg from '../../assets/splash.png';
-
 import localStorageService from '../../service/localStorageService';
 import EventProfile from '../../components/eventProfile';
 import OrderList from '../../components/orderList';
-
 import AuthService from '../../service/authService'
 import { messageError, messageSuccess } from '../../components/toastr';
-
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 
@@ -40,6 +37,10 @@ class Perfil extends React.Component {
 
     edit = (id) => {
         this.props.history.push(`/event/new/${id}`)
+    }
+
+    payment = (id) => {
+        this.props.history.push(`/payment/${id}`)
     }
 
     cancelDelete = () => {
@@ -124,6 +125,7 @@ class Perfil extends React.Component {
                         </div>
                         <div>
                             <EventProfile eventos={this.events.events}
+                                updateTiket={this.payment}
                                 updateEvent={this.edit}
                                 deleteEvent={this.openDialog} />
                             <br>

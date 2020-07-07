@@ -10,7 +10,6 @@ import 'bootswatch/dist/flatly/bootstrap.css'
 import { messageError, messageSuccess } from '../../components/toastr';
 
 import axios from 'axios'
-
 import logoImg from '../../assets/logo.png';
 import SelectMenu from '../../components/selectMenu';
 
@@ -87,8 +86,8 @@ class Register extends React.Component {
             this.props.history.push('/')
             messageSuccess("Usuário " + this.state.email + " cadastrado com sucesso.")
 
-        }).catch(erro => {
-            messageError("Todos os campos são Obrigatórios.")
+        }).catch(error => {
+            messageError("Email já Cadastrado. Tente Novamente");
         })
     }
 
@@ -129,12 +128,12 @@ class Register extends React.Component {
                         <form className="form">
                             <div className="aling-center">
                             </div>
-                            <input type="text" id="name1" value={this.state.name} onChange={e => this.setState({ name: e.target.value })} placeholder="Digite seu nome completo..." />
+                            <input type="text" id="name1" value={this.state.name} onChange={e => this.setState({ name: e.target.value })} placeholder="Digite seu nome completo. Mínimo 15 caracteres." />
                             <input type="email" id="email2" value={this.state.email} onChange={e => this.setState({ email: e.target.value })} placeholder="digite seu melhor e-mail..." />
                             <SelectMenu id="userType" className="button" lista={userType} name="userType" value={this.state.userType} onChange={this.handleChange} />
                             <input type="text" id="cpfCnpj" value={this.state.cpfCnpj} onChange={e => this.setState({ cpfCnpj: e.target.value })} placeholder="Cpf ou Cnpj  000.000.000-00" />
-                            <input type="text" id="phone1" value={this.state.phone} onChange={e => this.setState({ phone: e.target.value })} placeholder="Whatsapp (00) 0 0000-0000" />
-                            <input type="password" id="password2" value={this.state.password} onChange={e => this.setState({ password: e.target.value })} placeholder="Digite uma senha..." />
+                            <input type="text" id="phone1" value={this.state.phone} onChange={e => this.setState({ phone: e.target.value })} placeholder="Whatsapp 00 0 0000 0000" />
+                            <input type="password" id="password2" value={this.state.password} onChange={e => this.setState({ password: e.target.value })} placeholder="Digite uma senha. Mínimo 6 caracteres." />
                             <input type="password" id="passwordConfirme" value={this.state.passwordConfirme} onChange={e => this.setState({ passwordConfirme: e.target.value })} placeholder="Confirme sua senha..." />
                             <Link className="button" onClick={this.cadastrar}>Registrar</Link>
                         </form>
