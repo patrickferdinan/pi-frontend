@@ -112,3 +112,11 @@ a:hover {
     text-decoration: none;
     filter: brightness(90%);
 }
+
+p {
+    color: #41414d;
+}
+
+h2 {
+    color: #41414d;
+}
