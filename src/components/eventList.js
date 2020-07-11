@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.css';
 
 export default props => {
 
@@ -6,7 +7,7 @@ export default props => {
     const rows = props.eventos.map(event => {
         return (<>
             <div className="col-md-6">
-                <div key={event.id} className="card bg-light">
+                <div key={event.id} className="card bg-light cartao">
                     <div className="card-header aling-center white">{event.description}</div>
                     <div className="card-body">
                         <h4 className="card-title aling-center">{event.name}</h4>
