@@ -34,7 +34,7 @@ class Register extends React.Component {
 
         if (!this.state.email) {
             msgs.push('O campo Email é Obrigatório.')
-        } else if (!this.state.email.match(/^[a-z0-9.]+@[a-z0-9]+\.[a-z]/)) {
+        } else if (!this.state.email.match(/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/)) {
             msgs.push('Informe um Email válido.')
         }
 
@@ -85,7 +85,7 @@ class Register extends React.Component {
             messageSuccess("Usuário " + this.state.email + " cadastrado com sucesso.")
 
         }).catch(error => {
-            messageError("Email já Cadastrado. Tente Novamente");
+            messageError("Dados inválidos. Tente Novamente");
         })
     }
 
