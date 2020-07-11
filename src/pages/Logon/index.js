@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiLogIn, FiSearch, FiLinkedin, FiGithub, FiSmartphone } from 'react-icons/fi';
+import { FiLogIn, FiSearch, FiLinkedin, FiGithub , FiSmartphone } from 'react-icons/fi';
 
 import 'bootswatch/dist/flatly/bootstrap.css'
 
@@ -36,7 +36,7 @@ class Logon extends React.Component {
     }
 
     login = () => {
-        axios.post('http://localhost:8080/users/login', {
+        axios.post('https://pi-event-imepac-api.herokuapp.com/users/login', {
             email: this.state.email,
             password: this.state.password
         }).then(response => {
@@ -81,7 +81,7 @@ class Logon extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4">
-                            <a className="back-link" href="https://expo.io/artifacts/0c361b30-41d3-4fe2-bcdf-25db4b6a336b" target="_blank" >
+                            <a className="back-link" href="https://expo.io/artifacts/2a44bbb2-147e-407d-9be9-0df34dcd0068">
                                 <FiSmartphone size={60} color="#7159c1" /> Download Mobile
                             </a>
                             <section className="form-aling">
@@ -109,48 +109,44 @@ class Logon extends React.Component {
                     <div>
                         <footer>
                             <span className="dev">Patrick Ferdinan</span>
-                            <a className="back-link" href="https://www.linkedin.com/in/patrick-ferdinan-73136815a/" target="_blank">
+                            <a className="back-link" href="https://www.linkedin.com/in/patrick-ferdinan-73136815a/">
                                 <FiLinkedin size={20} color="#7159c1" />
                             </a>
-                            <a className="back-link" href="https://github.com/patrickferdinan" target="_blank">
+                            <a className="back-link" href="https://github.com/patrickferdinan">
                                 <FiGithub size={20} color="#7159c1" />
                             </a>
                             <span className="dev">|&nbsp;&nbsp; João Pedro</span>
-                            <a className="back-link" href="https://www.linkedin.com/in/jo%C3%A3o-pedro-della-posta-b20ba0182/" target="_blank" >
+                            <a className="back-link" href="https://www.linkedin.com/in/jo%C3%A3o-pedro-della-posta-b20ba0182/">
                                 <FiLinkedin size={20} color="#7159c1" />
                             </a>
 
                             <span className="dev">|&nbsp;&nbsp; Talisson Rodrigues </span>
-                            <a className="back-link" href="https://www.linkedin.com/in/talisson-rodrigues/" target="_blank" >
+                            <a className="back-link" href="https://www.linkedin.com/in/talisson-rodrigues/" >
                                 <FiLinkedin size={20} color="#7159c1" />
                             </a>
-                            <a className="back-link" href="https://github.com/TalissonMelo" target="_blank">
+                            <a className="back-link" href="https://github.com/TalissonMelo">
                                 <FiGithub size={20} color="#7159c1" />
                             </a>
 
                             <span className="dev">|&nbsp;&nbsp; Palmiro Rezende</span>
-                            <a className="back-link" href="https://www.linkedin.com/in/palmirorezende/" target="_blank" >
+                            <a className="back-link" href="https://www.linkedin.com/in/palmirorezende/" >
                                 <FiLinkedin size={20} color="#7159c1" />
                             </a>
-                            <a className="back-link" href="https://github.com/palmirorezende" target="_blank">
+                            <a className="back-link" href="https://github.com/palmirorezende">
                                 <FiGithub size={20} color="#7159c1" />
                             </a>
                             <span className="dev">|&nbsp;&nbsp; Yuri Fernandes</span>
 
                             <span className="dev">|&nbsp;&nbsp; GitHub Ptojeto </span>
-                            <a className="back-link" href="https://github.com/TalissonMelo/project-event-backend" target="_blank">
+                            <a className="back-link" href="https://github.com/TalissonMelo/project-event-backend">
                                 <FiGithub size={20} color="#7159c1" />
                             </a>
                             
-                            <a className="back-link" href="https://github.com/TalissonMelo/event-frontend-react" target="_blank">
-                                <FiGithub size={20} color="#7159c1" />
-                            </a>
-                            
-                            <a className="back-link" href="https://github.com/patrickferdinan/pi-frontend" target="_blank">
+                            <a className="back-link" href="https://github.com/patrickferdinan/pi-frontend">
                                 <FiGithub size={20} color="#7159c1" />
                             </a>
 
-                            <a className="back-link" href="https://github.com/patrickferdinan/pi-mobile" target="_blank">
+                            <a className="back-link" href="https://github.com/patrickferdinan/pi-mobile">
                                 <FiGithub size={20} color="#7159c1" />
                             </a>
                         </footer>

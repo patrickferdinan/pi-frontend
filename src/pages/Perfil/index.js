@@ -13,6 +13,7 @@ import { messageError, messageSuccess } from '../../components/toastr';
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 
+
 const logout = () => {
     AuthService.removeUserAuthenticate();
 }
@@ -48,14 +49,14 @@ class Perfil extends React.Component {
     }
 
     delete = (id) => {
-        axios.delete(`http://localhost:8080/events/${this.state.eventDelete}`).
-            then(response => {
+        axios.delete(`https://pi-event-imepac-api.herokuapp.com/events/${this.state.eventDelete}`)
+        .then(response => {
 
                 const user = localStorageService.getlocalStorage('_user')
                 var userId = user.id;
                 console.log(userId);
 
-                axios.get(`http://localhost:8080/users/${userId}`).then(response => {
+                axios.get(`https://pi-event-imepac-api.herokuapp.com/users/${userId}`).then(response => {
                     localStorageService.addItem('_user', response.data);
                 })
                 this.props.history.push('/profile')
@@ -104,7 +105,6 @@ class Perfil extends React.Component {
                                             <th scope="col">Nome</th>
                                             <th scope="col">Email</th>
                                             <th scope="col">Telefone</th>
-                                            <th scope="col">Ações</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -112,9 +112,6 @@ class Perfil extends React.Component {
                                             <th scope="row">{this.user.name}</th>
                                             <td>{this.user.email}</td>
                                             <td>{this.user.phone}</td>
-                                            <td>
-                                                <button type="button" className="btn btn-warning">Editar</button>
-                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

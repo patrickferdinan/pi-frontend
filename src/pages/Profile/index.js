@@ -81,7 +81,7 @@ class Profile extends React.Component {
         const user = localStorageService.getlocalStorage('_user')
         var userId = user.id;
 
-        axios.post('http://localhost:8080/orders/', {
+        axios.post('https://pi-event-imepac-api.herokuapp.com/orders/', {
 
             user: userId,
             event: this.state.tickets.id,
@@ -89,7 +89,7 @@ class Profile extends React.Component {
 
         }).then(response => {
 
-            axios.get(`http://localhost:8080/users/${userId}`).then(response => {
+            axios.get(`https://pi-event-imepac-api.herokuapp.com/users/${userId}`).then(response => {
                 localStorageService.addItem('_user', response.data);
             })
             

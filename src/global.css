@@ -22,6 +22,12 @@ input:hover {
     border: 1px solid #333;
 }
 
+.white{
+    color: white;
+    font-size: 15px;
+}
+
+
 form textarea {
     width: 100%;
     resize: vertical;
@@ -101,22 +107,7 @@ form textarea {
 }
 
 .back-link:hover {
-    color: #7057c3;
+    color: #333;
     text-decoration: none;
     filter: brightness(90%);
-}
-a {
-    opacity: 0.8;
-}
-a:hover {
-    text-decoration: none;
-    filter: brightness(90%);
-}
-
-p {
-    color: #41414d;
-}
-
-h2 {
-    color: #41414d;
 }

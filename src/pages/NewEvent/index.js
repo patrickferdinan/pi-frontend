@@ -34,7 +34,7 @@ class NewEvent extends React.Component {
         this.setState({ id: params.id })
         if (params.id) {
 
-            axios.get(`http://localhost:8080/events/${params.id}`)
+            axios.get(`https://pi-event-imepac-api.herokuapp.com/events/${params.id}`)
                 .then(response => {
                     this.setState({ ...response.data, updateEvent: true })
                 }).catch(error => {
@@ -44,7 +44,7 @@ class NewEvent extends React.Component {
     }
 
     update = () => {
-        axios.put(`http://localhost:8080/events/${this.state.id}`, {
+        axios.put(`https://pi-event-imepac-api.herokuapp.com/events/${this.state.id}`, {
             name: this.state.name,
             description: this.state.description,
             initialData: this.state.initialData,
@@ -56,7 +56,7 @@ class NewEvent extends React.Component {
 
             const user = localStorageService.getlocalStorage('_user')
             var userId = user.id;
-            axios.get(`http://localhost:8080/users/${userId}`).then(response => {
+            axios.get(`https://pi-event-imepac-api.herokuapp.com/users/${userId}`).then(response => {
                 localStorageService.addItem('_user', response.data);
             })
 
@@ -127,7 +127,7 @@ class NewEvent extends React.Component {
         const user = localStorageService.getlocalStorage('_user')
         var userId = user.id;
 
-        axios.post('http://localhost:8080/events/', {
+        axios.post('https://pi-event-imepac-api.herokuapp.com/events/', {
             user: userId,
             name: this.state.name,
             description: this.state.description,
@@ -145,7 +145,7 @@ class NewEvent extends React.Component {
 
         }).then(response => {
 
-            axios.get(`http://localhost:8080/users/${userId}`).then(response => {
+            axios.get(`https://pi-event-imepac-api.herokuapp.com/users/${userId}`).then(response => {
                 localStorageService.addItem('_user', response.data);
             })
 

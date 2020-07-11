@@ -35,7 +35,7 @@ class Payment extends React.Component {
 
     ticket = (id) => {
 
-        axios.put(`http://localhost:8080/payments/${id}`, {
+        axios.put(`https://pi-event-imepac-api.herokuapp.com/payments/${id}`, {
             status: this.state.status
         }).then(response => {
             this.props.history.push('/perfil')
@@ -50,8 +50,8 @@ class Payment extends React.Component {
         this.setState({ id: params.id })
         if (params.id) {
 
-            axios.get(`http://localhost:8080/events/${params.id}/orders`).
-                then(response => {
+            axios.get(`https://pi-event-imepac-api.herokuapp.com/events/${params.id}/orders`)
+                .then(response => {
                     this.setState({ participantsEvent: response.data })
                     console.log(this.state.participantsEvent);
                 }).catch(erro => {

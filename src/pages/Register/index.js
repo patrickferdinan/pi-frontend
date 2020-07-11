@@ -45,9 +45,7 @@ class Register extends React.Component {
 
         if (!this.state.cpfCnpj) {
             msgs.push('O campo CpfCnpj é Obrigatório.')
-        } else if (!this.state.cpfCnpj.match(/^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$/)) {
-            msgs.push('Informe um CpfCnpj válido.')
-        }
+        } 
 
         if (!this.state.phone) {
             msgs.push('O campo Telefone é Obrigatório.')
@@ -74,7 +72,7 @@ class Register extends React.Component {
             return false;
         }
 
-        axios.post('http://localhost:8080/users/', {
+        axios.post('https://pi-event-imepac-api.herokuapp.com/users/', {
             name: this.state.name,
             email: this.state.email,
             userType: this.state.userType,
