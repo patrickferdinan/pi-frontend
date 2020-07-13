@@ -137,7 +137,7 @@ class Logon extends React.Component {
                             </a>
                             <span className="dev">|&nbsp;&nbsp; Yuri Fernandes</span>
 
-                            <span className="dev">|&nbsp;&nbsp; GitHub Ptojeto </span>
+                            <span className="dev">|&nbsp;&nbsp; GitHub Projeto </span>
                             <a className="back-link" href="https://github.com/TalissonMelo/project-event-backend">
                                 <FiGithub size={20} color="#7159c1" />
                             </a>
